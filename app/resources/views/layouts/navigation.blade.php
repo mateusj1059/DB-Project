@@ -11,12 +11,31 @@
                 </div>
 
                 <!-- Navigation Links -->
-                <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
-                    <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
-                        {{ __('Dashboard') }}
-                    </x-nav-link>
-                </div>
-            </div>
+<div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
+    <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
+        {{ __('Dashboard') }}
+    </x-nav-link>
+    <x-nav-link :href="route('items.index')" :active="request()->routeIs('items.*')">
+        Items
+    </x-nav-link>
+    <x-nav-link :href="route('categorias.index')" :active="request()->routeIs('categorias.*')">
+        Categorías
+    </x-nav-link>
+    <x-nav-link :href="route('rareza.index')" :active="request()->routeIs('rareza.*')">
+        Rareza
+    </x-nav-link>
+    <x-nav-link :href="route('inventario.index')" :active="request()->routeIs('inventario.*')">
+        Inventario
+    </x-nav-link>
+    <x-nav-link :href="route('recetas.index')" :active="request()->routeIs('recetas.*')">
+        Recetas
+    </x-nav-link>
+    @hasrole('superadmin')
+    <x-nav-link :href="route('usuarios.index')" :active="request()->routeIs('usuarios.*')">
+        Usuarios
+    </x-nav-link>
+    @endhasrole
+</div>
 
             <!-- Settings Dropdown -->
             <div class="hidden sm:flex sm:items-center sm:ms-6">

@@ -18,11 +18,19 @@ class RolesSeeder extends Seeder
         Role::create(['name' => 'visor']);
 
         // Crear usuario superadmin por defecto
-        $user = User::create([
-            'name'     => 'Super Admin',
-            'email'    => 'superadmin@admin.com',
-            'password' => Hash::make('password123'),
-        ]);
+       $user = User::create([
+            'name'     => 'Mateus',
+            'email'    => 'mateusjhon2105@gmail.com',
+            'password' => Hash::make('Etitc2105'),
+            ]);
         $user->assignRole('superadmin');
+
+        // Dominios permitidos por defecto
+        \App\Models\Dominio::insert([
+            ['nombre_dominio' => 'gmail.com'],
+            ['nombre_dominio' => 'hotmail.com'],
+            ['nombre_dominio' => 'outlook.com'],
+            ['nombre_dominio' => 'yahoo.com'],
+        ]);
     }
 }
